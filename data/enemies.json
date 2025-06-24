@@ -1,28 +1,5 @@
 [
   {
-    "id": "goblin",
-    "name": "Goblin",
-    "stats": {
-      "weaponSkill": 3,
-      "ballisticSkill": 3,
-      "strength": 3,
-      "toughness": 3,
-      "agility": 3,
-      "intelligence": 2,
-      "willPower": 2,
-      "fellowship": 2,
-      "attacks": 1,
-      "wounds": 1
-    },
-    "abilities": [
-      {
-        "name": "Cowardly",
-        "description": "Must pass Will Power test to stand and fight if outnumbered"
-      }
-    ],
-    "weaponName": "Short Sword"
-  },
-  {
     "id": "orc",
     "name": "Orc",
     "stats": {
