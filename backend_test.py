@@ -136,7 +136,7 @@ class WarhammerAPITester:
 
 def main():
     # Get the backend URL from environment or use default
-    backend_url = "http://localhost:8001"
+    backend_url = "http://10.64.133.7:8001"
     
     # Create the tester
     tester = WarhammerAPITester(backend_url)
