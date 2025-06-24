@@ -1,5 +1,51 @@
 [
   {
+    "id": "goblin",
+    "name": "Goblin",
+    "stats": {
+      "weaponSkill": 3,
+      "ballisticSkill": 3,
+      "strength": 3,
+      "toughness": 3,
+      "agility": 3,
+      "intelligence": 2,
+      "willPower": 2,
+      "fellowship": 2,
+      "attacks": 1,
+      "wounds": 1
+    },
+    "abilities": [
+      {
+        "name": "Cowardly",
+        "description": "Must pass Will Power test to stand and fight if outnumbered"
+      }
+    ],
+    "weaponName": "Short Sword"
+  },
+  {
+    "id": "orc",
+    "name": "Orc",
+    "stats": {
+      "weaponSkill": 4,
+      "ballisticSkill": 3,
+      "strength": 4,
+      "toughness": 4,
+      "agility": 2,
+      "intelligence": 2,
+      "willPower": 3,
+      "fellowship": 2,
+      "attacks": 1,
+      "wounds": 2
+    },
+    "abilities": [
+      {
+        "name": "Brutal",
+        "description": "+1 damage on critical hits"
+      }
+    ],
+    "weaponName": "Hand Weapon"
+  },
+  {
     "id": "skaven-clanrat",
     "name": "Skaven Clanrat",
     "stats": {
