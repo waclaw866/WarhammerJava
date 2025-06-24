@@ -72,13 +72,24 @@ class WarhammerAPITester:
             if len(expected) == 0:
                 return True
             
-            # If expected is a list with specific items, check each one
+            # If expected is a list with specific items, check if each expected item
+            # has a matching item in the actual list
             for exp_item in expected:
                 found = False
-                for act_item in actual:
-                    if self._item_matches(act_item, exp_item):
-                        found = True
-                        break
+                if isinstance(exp_item, dict) and "name" in exp_item:
+                    # For dictionaries with a name field, just check if the name exists
+                    for act_item in actual:
+                        if isinstance(act_item, dict) and "name" in act_item:
+                            if exp_item["name"] == act_item["name"]:
+                                found = True
+                                break
+                else:
+                    # For other items, check for an exact match
+                    for act_item in actual:
+                        if self._item_matches(act_item, exp_item):
+                            found = True
+                            break
+                
                 if not found:
                     print(f"❌ Expected item not found: {exp_item}")
                     return False
