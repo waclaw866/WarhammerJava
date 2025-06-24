@@ -1,0 +1,121 @@
+[
+  {
+    "id": "goblin",
+    "name": "Goblin",
+    "stats": {
+      "weaponSkill": 3,
+      "ballisticSkill": 3,
+      "strength": 3,
+      "toughness": 3,
+      "agility": 3,
+      "intelligence": 2,
+      "willPower": 2,
+      "fellowship": 2,
+      "attacks": 1,
+      "wounds": 1
+    },
+    "abilities": [
+      {
+        "name": "Cowardly",
+        "description": "Must pass Will Power test to stand and fight if outnumbered"
+      }
+    ],
+    "weaponName": "Short Sword"
+  },
+  {
+    "id": "orc",
+    "name": "Orc",
+    "stats": {
+      "weaponSkill": 4,
+      "ballisticSkill": 3,
+      "strength": 4,
+      "toughness": 4,
+      "agility": 2,
+      "intelligence": 2,
+      "willPower": 3,
+      "fellowship": 2,
+      "attacks": 1,
+      "wounds": 2
+    },
+    "abilities": [
+      {
+        "name": "Brutal",
+        "description": "+1 damage on critical hits"
+      }
+    ],
+    "weaponName": "Hand Weapon"
+  },
+  {
+    "id": "skaven-clanrat",
+    "name": "Skaven Clanrat",
+    "stats": {
+      "weaponSkill": 3,
+      "ballisticSkill": 3,
+      "strength": 3,
+      "toughness": 3,
+      "agility": 4,
+      "intelligence": 3,
+      "willPower": 2,
+      "fellowship": 2,
+      "attacks": 1,
+      "wounds": 1
+    },
+    "abilities": [
+      {
+        "name": "Scurry",
+        "description": "+1 to Initiative when fleeing"
+      }
+    ],
+    "weaponName": "Spear"
+  },
+  {
+    "id": "empire-guard",
+    "name": "Empire Guard",
+    "stats": {
+      "weaponSkill": 4,
+      "ballisticSkill": 3,
+      "strength": 3,
+      "toughness": 3,
+      "agility": 3,
+      "intelligence": 3,
+      "willPower": 3,
+      "fellowship": 3,
+      "attacks": 1,
+      "wounds": 1
+    },
+    "abilities": [
+      {
+        "name": "Disciplined",
+        "description": "+1 to Will Power tests when in formation"
+      }
+    ],
+    "weaponName": "Sword"
+  },
+  {
+    "id": "chaos-warrior",
+    "name": "Chaos Warrior",
+    "stats": {
+      "weaponSkill": 5,
+      "ballisticSkill": 3,
+      "strength": 4,
+      "toughness": 4,
+      "agility": 3,
+      "intelligence": 3,
+      "willPower": 4,
+      "fellowship": 2,
+      "attacks": 2,
+      "wounds": 2
+    },
+    "abilities": [
+      {
+        "name": "Chaos Armour",
+        "description": "Reduces incoming damage by 1 (minimum 1)"
+      },
+      {
+        "name": "Fearsome",
+        "description": "Enemies must pass Will Power test or suffer -1 to hit"
+      }
+    ],
+    "weaponName": "Great Weapon"
+  }
+]
