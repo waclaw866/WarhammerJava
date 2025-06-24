@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warhammer.rpg.app.controller.MainController">
+   <top>
+      <VBox styleClass="header-section">
+         <children>
+            <Label styleClass="title-label" text="WARHAMMER FANTASY 2E" />
+            <Label styleClass="subtitle-label" text="Encounter Manager" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </top>
+   <center>
+      <TabPane styleClass="main-tabs">
+        <tabs>
+          <Tab styleClass="tab-bestiary" text="Bestiary">
+               <content>
+                  <HBox spacing="10.0">
+                     <children>
+                        <VBox prefWidth="500.0">
+                           <children>
+                              <Label styleClass="section-header" text="Creatures of the Old World" />
+                              <TableView fx:id="bestiaryTable" styleClass="bestiary-table">
+                                <columns>
+                                  <TableColumn fx:id="enemyNameColumn" prefWidth="120.0" text="Name" />
+                                    <TableColumn fx:id="enemyWSColumn" prefWidth="40.0" text="WS" />
+                                    <TableColumn fx:id="enemyBSColumn" prefWidth="40.0" text="BS" />
+                                    <TableColumn fx:id="enemySColumn" prefWidth="40.0" text="S" />
+                                    <TableColumn fx:id="enemyTColumn" prefWidth="40.0" text="T" />
+                                    <TableColumn fx:id="enemyWoundsColumn" prefWidth="40.0" text="W" />
+                                </columns>
+                              </TableView>
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <Button onAction="#addToEncounter" styleClass="action-button" text="Add to Encounter" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label styleClass="section-header" text="Enemy Details" />
+                              <TextArea fx:id="enemyDetailsArea" prefHeight="400.0" prefWidth="350.0" styleClass="details-area" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
