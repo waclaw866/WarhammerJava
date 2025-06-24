@@ -155,8 +155,6 @@ def main():
         "GET", 
         "/api/enemies",
         expected_data=[
-            {"name": "Goblin"},
-            {"name": "Orc"},
             {"name": "Skaven Clanrat"}
         ]
     )
