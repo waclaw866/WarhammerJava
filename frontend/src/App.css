@@ -1,0 +1,538 @@
+/* Warhammer Fantasy 2e Encounter Manager Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  background: #0a0a0a;
+  color: #e0d4b8;
+  line-height: 1.6;
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  position: relative;
+}
+
+/* Header Styles */
+.app-header {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.8)
+  ), url('https://images.unsplash.com/photo-1514539079130-25950c84af65?w=1200&h=600&fit=crop') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 3px solid #8b4513;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.header-content {
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.app-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+.app-subtitle {
+  font-size: 1.5rem;
+  color: #c0c0c0;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+}
+
+.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+  z-index: 1;
+}
+
+/* Loading Styles */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #1a1a1a;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #333;
+  border-top: 3px solid #d4af37;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Main Content */
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Tab Navigation */
+.tab-nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #333;
+}
+
+.tab-btn {
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  border: 2px solid #444;
+  color: #c0c0c0;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tab-btn:hover {
+  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  border-color: #666;
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  background: linear-gradient(145deg, #d4af37, #b8941f);
+  color: #1a1a1a;
+  border-color: #d4af37;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.tab-icon {
+  font-size: 1.2rem;
+}
+
+/* Content Area */
+.content-area {
+  min-height: 500px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Enemy Cards */
+.enemy-card {
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  border: 2px solid #444;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.enemy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8b4513, #d4af37, #8b4513);
+}
+
+.enemy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+  border-color: #666;
+}
+
+.enemy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.enemy-name {
+  font-size: 1.4rem;
+  color: #d4af37;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.delete-btn {
+  background: #8b0000;
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #a00000;
+  transform: scale(1.1);
+}
+
+/* Stat Block */
+.stat-block {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 4px;
+  border: 1px solid #444;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  color: #d4af37;
+  font-weight: bold;
+  margin-top: 0.2rem;
+}
+
+/* Weapon Info */
+.weapon-info {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(139, 69, 19, 0.2);
+  border-radius: 8px;
+  border: 1px solid #8b4513;
+}
+
+.weapon-info h4 {
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+/* Abilities */
+.abilities {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(128, 0, 128, 0.1);
+  border-radius: 8px;
+  border: 1px solid #663366;
+}
+
+.abilities h4 {
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+.ability {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.ability strong {
+  color: #c0c0c0;
+}
+
+/* Enemy Actions */
+.enemy-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  background: linear-gradient(145deg, #8b4513, #654321);
+  border: 2px solid #a0522d;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 120px;
+}
+
+.action-btn:hover {
+  background: linear-gradient(145deg, #a0522d, #8b4513);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.4);
+}
+
+/* Weapon Cards */
+.weapon-card {
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  border: 2px solid #444;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.weapon-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #666, #999, #666);
+}
+
+.weapon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+  border-color: #666;
+}
+
+.weapon-name {
+  font-size: 1.3rem;
+  color: #c0c0c0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.weapon-stats p {
+  margin: 0.5rem 0;
+  color: #e0d4b8;
+}
+
+.weapon-stats strong {
+  color: #d4af37;
+}
+
+/* Dice Section */
+.dice-section {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  border-radius: 12px;
+  border: 2px solid #444;
+  margin: 2rem 0;
+}
+
+.dice-section h3 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.dice-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.dice-btn {
+  background: linear-gradient(145deg, #1a5490, #0f3a63);
+  border: 3px solid #2a6bb5;
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dice-btn:hover {
+  background: linear-gradient(145deg, #2a6bb5, #1a5490);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(42, 107, 181, 0.4);
+}
+
+.dice-btn:active {
+  transform: translateY(-1px) scale(0.95);
+}
+
+/* Dice Notification */
+.dice-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation: diceAppear 0.5s ease-out;
+}
+
+.dice-result {
+  background: linear-gradient(145deg, #d4af37, #b8941f);
+  color: #1a1a1a;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.6);
+  border: 3px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dice-type {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.dice-value {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes diceAppear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2.5rem;
+  }
+  
+  .app-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .tab-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .dice-buttons {
+    gap: 1rem;
+  }
+  
+  .dice-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
